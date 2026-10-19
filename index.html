@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Hub</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #101020, #202050);
+    color: white;
+    text-align: center;
+}
+
+header {
+    padding: 40px 20px;
+    background: #151530;
+}
+
+h1 {
+    color: #00d9ff;
+}
+
+.container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.card {
+    background: #252545;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #0005;
+}
+
+.email {
+    color: #00ffcc;
+    font-size: 18px;
+    overflow-wrap: anywhere;
+}
+
+button, .btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    background: #008cff;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button:hover, .btn:hover {
+    background: #00b7ff;
+}
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    color: #aaa;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Google аккаунт</h2>
+
+        <p class="email">sch262me@gmail.com</p>
+        <p class="password">abc123cba321</p>
+
+        <button onclick="copyEmail()">
+            Скопировать почту
+        </button>
+        <button onclick="copyPassword()">
+             Скопировать пароль
+          </button>
+
+        <a class="btn"
+           href="https://accounts.google.com/"
+           target="_blank" rel="noopener noreferrer">
+            Войти в Google
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>YouTube</h2>
+
+        <p>Быстрый доступ к YouTube</p>
+
+        <a class="btn"
+           href="https://youtube.com"
+           target="_blank" rel="noopener noreferrer">
+            Открыть YouTube
+        </a>
+    </div>
+
+</div>
+
+<script>
+function copyEmail() {
+    const email = "sch262me@gmail.com";
+
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email)
+            .then(() => alert("Почта скопирована!"))
+            .catch(() => prompt("Скопируй почту:", email));
+    } else {
+        prompt("Скопируй почту:", email);
+    }
+}
+function copyPassword() {
+    const passwd = "abc123cba321";
+
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(passwd)
+            .then(() => alert("Пароль скопирован!"))
+            .catch(() => prompt("Скопируй пароль:", passwd));
+    } else {
+        prompt("Скопируй пароль:", passwd);
+    }
+}
+</script>
+
+</body>
+</html>
